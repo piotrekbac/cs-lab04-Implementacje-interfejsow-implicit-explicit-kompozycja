@@ -24,7 +24,7 @@ namespace Zadanie1
         State GetState();
 
         //Definiujemy właściwość Counter, która będzie zwracać liczbę uruchomień urządzenia
-        int Counter { get; }  
+        int Counter { get; }
     }
 
     //Teraz przechodzimy do definicji klasy BaseDevice, która implementuje interfejs IDevice
@@ -50,7 +50,7 @@ namespace Zadanie1
         public void PowerOn()
         {
             //Jeżeli urządzenie było wcześniej wyłączone, zwiększamy licznik uruchomie - liczymy tylko pierwsze włączenie z off na on
-            if (state == IDevice.State.off) 
+            if (state == IDevice.State.off)
             {
                 //Zwiększamy licznik uruchomień o 1
                 Counter++;

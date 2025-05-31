@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static Zadanie1.IDevice;
 
 //Piotr Bacior 15 722 - WSEI Kraków
@@ -15,19 +11,24 @@ namespace Zadanie1
         //Definiujemy licznik wydruków, który przechowuje liczbę wydrukowanych dokumentów przez to urządzenie.
         public int PrintCounter { get; private set; } = 0;
 
-        //Defoiniujemy licznik skanów, który przechowuje liczbę zeskanowanych dokumentów przez to urządzenie.
+        //Definiujemy licznik skanów, który przechowuje liczbę zeskanowanych dokumentów przez to urządzenie.
         public int ScanCounter { get; private set; } = 0;
 
-        //Przechodzimy do zdefiniowanai metody Print, która przyjmuje dokument jako parametr.
+        //Przechodzimy do zdefiniowania metody Print, która przyjmuje dokument jako parametr.
         public void Print(in IDocument document)
         {
-            //Sprawdzamy, czy urządzenie jest włączone. Jeśli nie, to kończymy działanie metody.
-            if (GetState() != State.on) return;
+            //Jeśli urządzenie jest wyłączone, nie wykonujemy żadnej operacji.
+            if (GetState() != State.on)
+                return;
 
-            //Zwiększamy licznik wydruków o 1.
+            //Jeśli dokument jest nullem, zgłaszamy wyjątek.
+            if (document == null)
+                throw new ArgumentNullException(nameof(document));
+
+            //Zwiększamy licznik wydruków.
             PrintCounter++;
 
-            //Wypisujemy na konsolę informację o wydruku dokumentu wraz z jego nazwą.
+            //Wypisujemy informację o wydruku dokumentu. WYMAGANE słowo "Print"
             Console.WriteLine($"{DateTime.Now:dd.MM.yyyy HH:mm:ss} Print: {document.GetFileName()}");
         }
 
@@ -41,13 +42,13 @@ namespace Zadanie1
             //Zwiększamy licznik skanów o 1.
             ScanCounter++;
 
-            //W zależności od formatu dokumentu, tworzymy odpowiedni obiekt dokumentu i przypisujemy go do zmiennej document.
+            //Tworzymy nazwę pliku w zależności od formatu.
             string filename = formatType switch
             {
                 IDocument.FormatType.PDF => $"PDFScan{ScanCounter}.pdf",
                 IDocument.FormatType.JPG => $"ImageScan{ScanCounter}.jpg",
                 IDocument.FormatType.TXT => $"TextScan{ScanCounter}.txt",
-                _ => $"NieznanyScan{ScanCounter}.bin"
+                _ => $"UnknownScan{ScanCounter}.bin"
             };
 
             //W zależności od formatu dokumentu, tworzymy odpowiedni obiekt dokumentu i przypisujemy go do zmiennej document.
@@ -60,14 +61,28 @@ namespace Zadanie1
             };
 
             //Jeśli dokument został poprawnie utworzony, wypisujemy na konsolę informację o skanowaniu dokumentu wraz z jego nazwą.
-            Console.WriteLine($"{DateTime.Now:dd.MM.yyyy HH:mm:ss} Scan: {document.GetFileName()}");
+            if (document != null)
+            {
+                Console.WriteLine($"{DateTime.Now:dd.MM.yyyy HH:mm:ss} Scan: {document.GetFileName()}");
+            }
+        }
+
+        //Przeciążenie metody Scan wymagane przez testy - domyślnie skanujemy do formatu JPG.
+        public void Scan(out IDocument document)
+        {
+            Scan(out document, IDocument.FormatType.JPG);
         }
 
         //Definiujemy metodę ScanAndPrint, która skanuje dokument i drukuje go.
         public void ScanAndPrint()
         {
-            //Sprawdzamy czy skanowanie się udało i czy dokument nie jest null, w takim wypadku drukujemy zeskanowany dokument.
+            //Sprawdzamy, czy urządzenie jest włączone. Jeśli nie, kończymy działanie metody.
+            if (GetState() != State.on) return;
+
+            //Skanujemy dokument do formatu JPG.
             Scan(out IDocument doc, IDocument.FormatType.JPG);
+
+            //Jeśli skanowanie się udało, drukujemy dokument.
             if (doc != null)
             {
                 Print(in doc);

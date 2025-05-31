@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 //Piotr Bacior 15 722 - WSEI Kraków
 
-namespace Zadanie1
+namespace Zadanie5
 {
     //Definiujemy interfejs IDevice, który będzie zawierał metody do zarządzania stanem urządzenia oraz licznikiem uruchomień.
     public interface IDocument
