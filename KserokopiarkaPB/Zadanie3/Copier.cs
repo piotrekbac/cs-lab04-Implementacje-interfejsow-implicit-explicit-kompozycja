@@ -34,7 +34,7 @@ namespace Zadanie3
                 state = IDevice.State.on;
 
                 //Wyświetlamy informację o włączeniu kserokopiarki
-                Console.WriteLine("Copier is ON");
+                Console.WriteLine("Kserokopiarka jest włączona (ON)");
             }
         }
 
@@ -48,7 +48,7 @@ namespace Zadanie3
                 state = IDevice.State.off;
 
                 //Wyświetlamy informację o wyłączeniu kserokopiarki
-                Console.WriteLine("Copier is OFF");
+                Console.WriteLine("Kserokopiarka jest wyłączona (OFF)");
             }
         }
 

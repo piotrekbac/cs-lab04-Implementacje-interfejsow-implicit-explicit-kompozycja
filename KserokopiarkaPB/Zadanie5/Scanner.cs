@@ -51,7 +51,7 @@ namespace Zadanie5
             if (state == IDevice.State.standby)
             {
                 state = IDevice.State.on;
-                Console.WriteLine("Scanner wakes from STANDBY");
+                Console.WriteLine("Skaner wybudza się ze stanu STANDBY");
             }
 
             //Zwiększamy licznik skanów i licznik od ostatniego standby
@@ -69,7 +69,7 @@ namespace Zadanie5
             {
                 state = IDevice.State.standby;
                 sinceStandby = 0;
-                Console.WriteLine("Scanner auto-standby");
+                Console.WriteLine("Skaner w trybie auto-standby");
             }
         }
     }

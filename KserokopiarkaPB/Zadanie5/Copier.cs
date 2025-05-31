@@ -46,7 +46,7 @@ namespace Zadanie5
             if (scanner.GetState() == IDevice.State.on)
             {
                 scanner.SetState(IDevice.State.standby);
-                Console.WriteLine("Scanner goes to STANDBY (printing)");
+                Console.WriteLine("Skaner przechodzi w tryb STANDBY (podczas drukowania)");
             }
 
             printer.Print(in document);
@@ -58,7 +58,7 @@ namespace Zadanie5
             if (printer.GetState() == IDevice.State.on)
             {
                 printer.SetState(IDevice.State.standby);
-                Console.WriteLine("Printer goes to STANDBY (scanning)");
+                Console.WriteLine("Drukarka przechodz w stan STANDBY (podczas skanowania)");
             }
 
             scanner.Scan(out document);

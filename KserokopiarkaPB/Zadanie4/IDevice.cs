@@ -27,28 +27,28 @@ namespace Zadanie4
         void PowerOn()
         {
             SetState(State.on);
-            Console.WriteLine("Device is ON.");
+            Console.WriteLine("Urządzenie jest włączone (ON)");
         }
 
         //Domyślna implementacja metody PowerOff - ustawia stan urządzenia na off
         void PowerOff()
         {
             SetState(State.off);
-            Console.WriteLine("Device is OFF.");
+            Console.WriteLine("Urządzenie jest wyłączone (OFF)");
         }
 
         //Domyślna implementacja metody StandbyOn - ustawia stan urządzenia na standby
         void StandbyOn()
         {
             SetState(State.standby);
-            Console.WriteLine("Device is in STANDBY.");
+            Console.WriteLine("Urządzenie jest w stanie STANDBY");
         }
 
         //Domyślna implementacja metody StandbyOff - przywraca stan on z trybu standby
         void StandbyOff()
         {
             SetState(State.on);
-            Console.WriteLine("Exiting STANDBY.");
+            Console.WriteLine("Wychodzenie ze stanu STANDBY");
         }
     }
 

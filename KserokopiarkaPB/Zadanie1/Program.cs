@@ -30,7 +30,7 @@ namespace Zadanie1
             NaszeKseroPB.ScanAndPrint();
 
             //Wypisujemy teraz na konsolę liczniki urządzenia, które pokazują liczbę uruchomień, wydruków i skanów.
-            Console.WriteLine("\n=== Statystyki pracy urządzeniaPB ===");
+            Console.WriteLine("\n=== Statystyki pracy urządzenia - PB ===");
 
             //Wypisujemy liczbę uruchomień urządzenia
             Console.WriteLine($"Liczba uruchomień urządzenia: {NaszeKseroPB.Counter}");

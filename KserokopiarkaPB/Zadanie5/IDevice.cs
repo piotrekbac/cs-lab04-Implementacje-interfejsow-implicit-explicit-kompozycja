@@ -27,7 +27,7 @@ namespace Zadanie5
         void PowerOn()
         {
             SetState(State.on);
-            Console.WriteLine("Device ON");
+            Console.WriteLine("Urządzenie jest włączone (ON)");
         }
 
         //Domyślna implementacja metody PowerOff
@@ -35,7 +35,7 @@ namespace Zadanie5
         void PowerOff()
         {
             SetState(State.off);
-            Console.WriteLine("Device OFF");
+            Console.WriteLine("Urządzenie jest wyłączone (OFF)");
         }
 
         //Domyślna implementacja metody StandbyOn
@@ -43,7 +43,7 @@ namespace Zadanie5
         void StandbyOn()
         {
             SetState(State.standby);
-            Console.WriteLine("Device in STANDBY");
+            Console.WriteLine("Urządzenie jest w stanie STANDBY");
         }
 
         //Domyślna implementacja metody StandbyOff
@@ -51,7 +51,7 @@ namespace Zadanie5
         void StandbyOff()
         {
             SetState(State.on);
-            Console.WriteLine("Device exited STANDBY");
+            Console.WriteLine("Urządzenie wychodzi ze stanu STANDBY");
         }
     }
 

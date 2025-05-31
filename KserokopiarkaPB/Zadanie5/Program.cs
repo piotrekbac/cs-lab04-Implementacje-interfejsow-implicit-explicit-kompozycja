@@ -9,7 +9,7 @@ namespace Zadanie5
     {
         static void Main()
         {
-            Console.WriteLine("Witam w zadaniu pierwszym! Piotr Bacior 15 722 \n");
+            Console.WriteLine("Witam w zadaniu piątym! Piotr Bacior 15 722 \n");
 
             //Tworzymy instancję kserokopiarki złożonej z osobnych modułów
             var NaszeKseroPB = new Copier();
@@ -38,7 +38,7 @@ namespace Zadanie5
             ((IDevice)NaszeKseroPB).PowerOff();
 
             //Wyświetlamy podsumowanie działania urządzenia
-            Console.WriteLine("\n=== Statystyki działnia urządzeniaPB ===");
+            Console.WriteLine("\n=== Statystyki działnia urządzenia - PB ===");
             Console.WriteLine($"Liczba wydruków: {NaszeKseroPB.PrintCounter}");
             Console.WriteLine($"Liczba skanów: {NaszeKseroPB.ScanCounter}");
             Console.WriteLine($"Liczba uruchomień (PowerOn): {NaszeKseroPB.Counter}");

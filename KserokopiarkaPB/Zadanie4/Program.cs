@@ -11,7 +11,7 @@ namespace Zadanie4
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Witam w zadaniu pierwszym! Piotr Bacior 15 722 \n");
+            Console.WriteLine("Witam w zadaniu czwartym! Piotr Bacior 15 722 \n");
 
             //Tworzymy instancję naszej zaawansowanej kserokopiarki z obsługą STANDBY
             Copier NaszeKseroPB = new Copier();
@@ -46,11 +46,11 @@ namespace Zadanie4
             ((IDevice)NaszeKseroPB).PowerOff();
 
             //Wyświetlamy podsumowanie statystyczne
-            Console.WriteLine("\n=== Statystyki działania urządzeniaPB ===");
+            Console.WriteLine("\n=== Statystyki działania urządzenia - PB ===");
             Console.WriteLine($"Liczba uruchomień (PowerOn): {NaszeKseroPB.Counter}");
             Console.WriteLine($"Liczba wydruków: {NaszeKseroPB.PrintCounter}");
             Console.WriteLine($"Liczba skanów: {NaszeKseroPB.ScanCounter}");
-            Console.WriteLine("\nProgram zakończył działanie. Naciśnij dowolny klawisz...PozdrawiamPV");
+            Console.WriteLine("\nProgram zakończył działanie. Naciśnij dowolny klawisz...PozdrawiamPB");
             Console.ReadKey();
         }
     }

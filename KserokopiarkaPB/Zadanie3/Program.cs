@@ -10,7 +10,7 @@ namespace Zadanie3
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Witam w zadaniu pierwszym! Piotr Bacior 15 722 \n");
+            Console.WriteLine("Witam w zadaniu trzecim! Piotr Bacior 15 722 \n");
 
             //Tworzymy instancję klasy Copier, która łączy skaner i drukarkę w jednym urządzeniu
             var NaszeKseroPB = new Copier();
@@ -32,7 +32,7 @@ namespace Zadanie3
             NaszeKseroPB.PowerOff();
 
             //Wyświetlamy teraz dane statystyczne dotyczące działania naszej kserokopiarki
-            Console.WriteLine("\n=== Statystyki działania kserokopiarkiPB ===");
+            Console.WriteLine("\n=== Statystyki działania kserokopiarki - PB ===");
             Console.WriteLine($"Liczba uruchomień: {NaszeKseroPB.Counter}");
             Console.WriteLine($"Liczba wydrukowanych dokumentów: {NaszeKseroPB.PrintCounter}");
             Console.WriteLine($"Liczba zeskanowanych dokumentów: {NaszeKseroPB.ScanCounter}");

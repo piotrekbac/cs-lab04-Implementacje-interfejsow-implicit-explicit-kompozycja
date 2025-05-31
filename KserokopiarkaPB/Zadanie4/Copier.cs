@@ -53,7 +53,7 @@ namespace Zadanie4
             printerState = IDevice.State.on;
             scannerState = IDevice.State.on;
 
-            Console.WriteLine("Copier is ON.");
+            Console.WriteLine("Kserokopiarka jest włączona (ON)");
         }
 
         //Metoda PowerOff - wyłącza oba moduły
@@ -61,7 +61,7 @@ namespace Zadanie4
         {
             printerState = IDevice.State.off;
             scannerState = IDevice.State.off;
-            Console.WriteLine("Copier is OFF.");
+            Console.WriteLine("Kserokopiarka jest wyłączona (OFF)");
         }
 
         //Metoda StandbyOn - przełącza oba moduły w tryb standby
@@ -69,7 +69,7 @@ namespace Zadanie4
         {
             printerState = IDevice.State.standby;
             scannerState = IDevice.State.standby;
-            Console.WriteLine("Copier is in STANDBY.");
+            Console.WriteLine("Kserokopiarka jest w stanie STANDBY");
         }
 
         //Metoda StandbyOff - przywraca oba moduły do stanu on
@@ -77,7 +77,7 @@ namespace Zadanie4
         {
             printerState = IDevice.State.on;
             scannerState = IDevice.State.on;
-            Console.WriteLine("Copier exits STANDBY.");
+            Console.WriteLine("Kserokopiarka wychodzi ze stanu STANDBY");
         }
 
         //Metoda Print - obsługuje drukowanie z uwzględnieniem logiki stanu drukarki i skanera
@@ -89,13 +89,13 @@ namespace Zadanie4
             if (scannerState == IDevice.State.on)
             {
                 scannerState = IDevice.State.standby;
-                Console.WriteLine("Scanner goes to STANDBY (during printing).");
+                Console.WriteLine("Skaner wchodzi w tryb STANDBY (podczas drukowania)");
             }
 
             if (printerState == IDevice.State.standby)
             {
                 printerState = IDevice.State.on;
-                Console.WriteLine("Printer wakes from STANDBY.");
+                Console.WriteLine("Drukarka wybudza się ze stanu STANDBY");
             }
 
             printCounter++;
@@ -107,7 +107,7 @@ namespace Zadanie4
             {
                 printerState = IDevice.State.standby;
                 printSinceStandby = 0;
-                Console.WriteLine("Printer goes to STANDBY (auto after 3 prints).");
+                Console.WriteLine("Drukarka wchodzi w stan STANDBY (automatycznie po 3 wydrukach)");
             }
         }
 
@@ -121,13 +121,13 @@ namespace Zadanie4
             if (printerState == IDevice.State.on)
             {
                 printerState = IDevice.State.standby;
-                Console.WriteLine("Printer goes to STANDBY (during scanning).");
+                Console.WriteLine("Drukarka wchodzi w stan STANDBY (podczas procesu skanowania)");
             }
 
             if (scannerState == IDevice.State.standby)
             {
                 scannerState = IDevice.State.on;
-                Console.WriteLine("Scanner wakes from STANDBY.");
+                Console.WriteLine("Skaner wybudza się ze stanu STANDBY.");
             }
 
             scanCounter++;
@@ -140,7 +140,7 @@ namespace Zadanie4
             {
                 scannerState = IDevice.State.standby;
                 scanSinceStandby = 0;
-                Console.WriteLine("Scanner goes to STANDBY (auto after 2 scans).");
+                Console.WriteLine("Skaner wchodzi w stan STANDBY (automatycznie po dwóch skanach)");
             }
         }
     }

@@ -49,7 +49,7 @@ namespace Zadanie5
             if (state == IDevice.State.standby)
             {
                 state = IDevice.State.on;
-                Console.WriteLine("Printer wakes from STANDBY");
+                Console.WriteLine("Drukarka wybudza się ze stanu STANDBY");
             }
 
             //Wypisujemy informację o drukowanym dokumencie
@@ -64,7 +64,7 @@ namespace Zadanie5
             {
                 state = IDevice.State.standby;
                 sinceStandby = 0;
-                Console.WriteLine("Printer auto-standby");
+                Console.WriteLine("Drukarka w stanie auto-standby");
             }
         }
     }
